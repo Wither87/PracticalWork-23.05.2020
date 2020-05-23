@@ -1,0 +1,89 @@
+<html>
+	<style>
+		#Yellow{
+			background: yellow;
+		}
+		#Green{
+			background: green;
+		}
+		#selectStyle{
+			width: 40;
+		}
+		#animals{
+			position: absolute;
+			left: 760px; 
+			top: 500px;
+			height: 80px;
+			width: 150px;
+			padding: 7px;
+			outline-color: red;
+			background: lime;
+		}
+		.pageResourse{
+		font-size: 30pt;
+		}
+	</style>
+	<script>
+		function ChangeColor(){
+			let select = document.getElementById("MySelect");
+			let div = document.getElementById("Yellow");
+			let selectedValue = select.value;
+			if(selectedValue == "1"){
+				div.style.backgroundColor = "green";
+			} else if(selectedValue == "2") {
+				div.style.backgroundColor = "red";
+			} else {
+				div.style.backgroundColor = "blue";
+			}
+		}
+		var left = 760;
+		function ChangeLocation(value){
+			if(value=="Влево"){
+				left=left-10;
+				document.getElementById('animals').style.left = left + 'px';
+			} else if(value=="Вправо"){
+				left=left+10;
+				document.getElementById('animals').style.left= left + 'px';
+			}
+		}
+
+	</script>
+	<body>
+		<title>HTML - язык программирования!!!</title>
+		<h1>
+			Hello World !!!
+		</h1>
+		<div id="Yellow" class="pageResourse">
+			<span>
+				Жмакалки =>
+				<input id="leftBut" class="pageResourse" value="Влево" type="button" onclick="ChangeLocation(this.value)" />
+				<input id="rightBut" class="pageResourse" value="Вправо" type="button" onclick="ChangeLocation(this.value)" />
+			</span>
+			<p> Какой-то текст. </p>
+		</div>
+		<div id="Green" class="pageResourse">
+			<p> Ещё какой-то текст</p>
+			<span>
+				<a href="Page 2.html">GoTo Page 2</a>
+			</span>
+			<select id="MySelect" id="selectStyle" onchange="ChangeColor()">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+			</select>
+		</div>
+		<br>
+		<div>
+			<div id="animals">
+				<li id="Cat">Котей</li>
+				<li id="Dog">Собакен</li>
+				<li id="Hamster">Хомячина</li>
+				<li id="Parrot">Попугай</li>
+			</div>
+		</div>
+		<br>
+		<img id="Image1" src="img\Cat.jpg" alt="" />
+	</body>
+</html>
